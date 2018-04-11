@@ -41,5 +41,5 @@ const routes = [
 export const router = new VueRouter({
 	routes,
 	mode: 'history',
-	base: 'https://andrewleykin.github.io/vuejs-vuex-vue-router/'
+	base: '/vuejs-vuex-vue-router/'
 });
