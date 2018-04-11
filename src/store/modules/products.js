@@ -3,7 +3,7 @@ import axios from 'axios';
 export default {
 	namespaced: true,
 	state: {
-		items: [],
+		items: getProducts(),
 		productLoaded: true
 	},
 	getters: {
@@ -25,27 +25,27 @@ export default {
 		}
 	},
 	mutations: {
-		loadItems(state, items) {
-			state.items = items;
-		}
+		// loadItems(state, items) {
+		// 	state.items = items;
+		// }
 	},
 	actions: {
-		loadItems(store) {
-			if(store.state.productLoaded) {
-				axios.get('http://js.dmitrylavrik.ru/api/products.php')
-				.then(function (response) {
-					store.commit('loadItems', response.data);
-					store.state.productLoaded = false;
-				})
-				.catch(function (error) {
-					console.log(error);
-				});
-			}
-		}
+		// loadItems(store) {
+		// 	if(store.state.productLoaded) {
+		// 		axios.get('http://js.dmitrylavrik.ru/api/products.php')
+		// 		.then(function (response) {
+		// 			store.commit('loadItems', response.data);
+		// 			store.state.productLoaded = false;
+		// 		})
+		// 		.catch(function (error) {
+		// 			console.log(error);
+		// 		});
+		// 	}
+		// }
 	}
 };
 
-/*
+
 function getProducts(){
 	return [
 		{
@@ -64,4 +64,4 @@ function getProducts(){
 			price: 30000
 		}
 	]
-}*/
+}
